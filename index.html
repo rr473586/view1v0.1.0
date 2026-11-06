@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="view1">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src-elem 'self' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.pexels.com; connect-src https://api.open-meteo.com https://geocoding-api.open-meteo.com; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<script src="js/guard.js"></script>
+<title>view1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-active">
+
+ <!-- 左上ロゴ -->
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+   <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 1200 400" style="enable-background:new 0 0 1200 400;" xml:space="preserve" fill="currentColor">
+<g>
+	<path d="M270.58,153.68h44.87l31.83,101.46l32.53-101.46h42.91l-55.11,137.55h-42.21L270.58,153.68z" fill="currentColor"/>
+	<path d="M469.15,104.08v33.19h-40.52v-33.19H469.15z M469.15,153.68v137.55h-40.52V153.68H469.15z" fill="currentColor"/>
+	<path d="M621.44,250.85c-1.03,8.16-5.75,16.45-14.16,24.86c-13.09,13.38-31.41,20.07-54.96,20.07c-19.44,0-36.6-5.64-51.46-16.91
+		c-14.86-11.27-22.29-29.61-22.29-55.02c0-23.81,6.71-42.06,20.12-54.77c13.41-12.7,30.82-19.06,52.23-19.06
+		c12.71,0,24.16,2.15,34.35,6.44c10.19,4.29,18.6,11.06,25.24,20.32c5.98,8.16,9.86,17.63,11.64,28.39
+		c1.03,6.31,1.45,15.4,1.26,27.26H518.8c0.56,13.8,5.37,23.47,14.44,29.03c5.51,3.45,12.15,5.17,19.91,5.17
+		c8.22,0,14.91-2.1,20.05-6.31c2.8-2.27,5.28-5.43,7.43-9.46H621.44z M581.9,208.7c-0.65-9.51-3.86-16.72-9.6-21.64
+		c-5.75-4.92-12.88-7.38-21.38-7.38c-9.25,0-16.43,2.61-21.52,7.82c-5.1,5.22-8.3,12.28-9.6,21.2H581.9z" fill="currentColor"/>
+	<path d="M749.05,291.23l-23.98-100.2l-24.26,100.2h-41.5l-42.91-137.55h42.91l23.84,98.69l22.01-98.69h40.52l23.28,99.06
+		l23.84-99.06h41.65l-44.31,137.55H749.05z" fill="currentColor"/>
+	<path d="M929.25,291.23h-40.94v-126.2H840.5v-24.48c12.62-0.5,21.45-1.26,26.5-2.27c8.04-1.6,14.58-4.8,19.63-9.59
+		c3.46-3.28,6.08-7.65,7.85-13.12c1.03-3.28,1.54-5.72,1.54-7.32h33.23V291.23z" fill="currentColor"/>
+</g>
+<polygon points="974.07,61.65 984.62,94.09 1018.73,94.09 991.13,114.14 1001.67,146.59 974.07,126.54 946.48,146.59 957.02,114.14 
+	929.42,94.09 963.53,94.09 " fill="currentColor"/>
+</svg>
+  </div>
+
+  <nav>
+    <button class="tab-btn active" data-tab="home" data-act="tab">
+      <span class="material-icons">home</span><span data-i18n="tab_home">ホーム</span>
+    </button>
+    <button class="tab-btn" data-tab="weather" data-act="tab">
+      <span class="material-icons">wb_sunny</span><span data-i18n="tab_weather">天気</span>
+    </button>
+    <button class="tab-btn" data-tab="clock" data-act="tab">
+      <span class="material-icons">public</span><span data-i18n="tab_clock">世界時計</span>
+    </button>
+    <button class="tab-btn" data-tab="timetable" data-act="tab">
+      <span class="material-icons">view_week</span><span data-i18n="tab_timetable">時間割</span>
+    </button>
+    <button class="tab-btn" data-tab="deadline" data-act="tab">
+      <span class="material-icons">event_busy</span><span data-i18n="tab_deadline">締め切り</span>
+    </button>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <div id="live-time">--:--:--</div>
+    <button class="settings-btn" data-act="open-settings" aria-label="設定" title="設定">
+      <span class="material-icons">settings</span>
+    </button>
+  </div>
+</aside>
+
+<!-- ホーム背景 -->
+<div class="home-bg" aria-hidden="true">
+  <img id="home-bg-img" src="https://images.pexels.com/photos/14644522/pexels-photo-14644522.jpeg" alt="" referrerpolicy="no-referrer" crossorigin="anonymous">
+  <canvas id="home-bg-canvas"></canvas>
+  <div class="home-bg-overlay"></div>
+  <canvas id="aurora3d"></canvas>
+</div>
+
+<main class="main">
+
+<!-- ===== ホーム画面文字welcome ===== -->
+<div id="tab-home" class="tab-content active">
+<div class="home-hero">
+  <div class="awwwards-hero">
+    
+
+    
+    <div class="awwwards-hero-content">
+      <div class="hero-greeting-title" data-i18n="home_greeting">welcome</div>
+      
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== 天気 ===== -->
+<div id="tab-weather" class="tab-content">
+  <div class="section-title" data-i18n="weather_title">天気</div>
+  <div class="section-sub" data-i18n="weather_sub">都市名を入力して天気を検索</div>
+  <div class="search-row">
+    <input class="search-input" id="weather-search-input" type="text" maxlength="100" enterkeyhint="search" autocomplete="off" data-i18n-placeholder="weather_placeholder" placeholder="例: 大阪, London, New York" />
+    <button type="button" class="search-btn" data-act="search-weather" data-i18n="weather_search_btn">検索</button>
+  </div>
+  <div id="weather-search-error" class="error-text"></div>
+  <div id="weather-search-wrap" class="weather-search-wrap" hidden>
+    <div class="card weather-card" id="weather-search-result">
+      <div class="loading-text" data-i18n="loading">読み込み中…</div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card weather-card" id="weather-tokyo">
+      <div class="card-title">Tokyo · 東京</div>
+      <div class="loading-text" data-i18n="loading">読み込み中…</div>
+    </div>
+    <div class="card weather-card" id="weather-tsuruoka">
+      <div class="card-title">Tsuruoka · 鶴岡</div>
+      <div class="loading-text" data-i18n="loading">読み込み中…</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 世界時計 ===== -->
+<div id="tab-clock" class="tab-content">
+  <div class="section-title" data-i18n="clock_title">世界時計</div>
+  <div class="section-sub" data-i18n="clock_sub">都市名を検索して追加。ドラッグで並べ替え</div>
+  <div class="search-row">
+    <input class="search-input" id="clock-search-input" type="text" maxlength="100" enterkeyhint="search" autocomplete="off" data-i18n-placeholder="clock_placeholder" placeholder="例: パリ, Dubai, ロサンゼルス" />
+    <button type="button" class="search-btn" data-act="search-clock" data-i18n="clock_search_btn">追加</button>
+  </div>
+  <div id="clock-search-error" class="error-text"></div>
+  <div id="clock-board" class="clock-board"></div>
+</div>
+
+<!-- ===== 時間割 ===== -->
+<div id="tab-timetable" class="tab-content">
+  <div class="section-title" data-i18n="tt_title">時間割</div>
+  <div class="section-sub" data-i18n="tt_sub">教科カードを選んでマスをクリックまたはドラッグ</div>
+
+  <div class="tt-palette-wrap card">
+    <div class="card-title" data-i18n="tt_palette_title">教科カード</div>
+    <div id="tt-palette" class="tt-palette"></div>
+    <div class="tt-add-row">
+      <input type="text" id="tt-custom-input" class="search-input" maxlength="12" data-i18n-placeholder="tt_custom_placeholder" placeholder="教科名を入力（例: 部活, 自習）" />
+      <button type="button" class="search-btn" data-act="tt-add" data-i18n="tt_add_btn">＋ カード追加</button>
+    </div>
+    <div id="tt-add-error" class="error-text"></div>
+    <div id="tt-hint" class="tt-hint"></div>
+  </div>
+
+
+  <div class="tt-grid-scroll">
+    <div id="tt-grid" class="tt-grid"></div>
+  </div>
+</div>
+
+<!-- ===== 提出物・宿題カウントダウン ===== -->
+<div id="tab-deadline" class="tab-content">
+  <div class="section-title" data-i18n="dl_title">提出物・宿題カウントダウン</div>
+  <div class="section-sub" data-i18n="dl_sub">締め切りを登録すると、あと何日か自動で表示されます。締め切りが近い順に並びます。</div>
+
+  <div class="card dl-form-card">
+    <div class="card-title" data-i18n="dl_form_title">新しい締め切りを追加</div>
+    <div class="dl-form-row">
+      <input type="text" id="dl-title-input" class="search-input dl-title-input" maxlength="40" enterkeyhint="done" autocomplete="off" data-i18n-placeholder="dl_title_placeholder" />
+      <input type="date" id="dl-date-input" class="dl-date-input" />
+    </div>
+    <div class="dl-form-row dl-form-actions">
+      <div class="dl-quick-row" id="dl-quick-row">
+        <button type="button" class="dl-quick-btn" data-act="dl-quick" data-days="0" data-i18n="dl_quick_today">今日</button>
+        <button type="button" class="dl-quick-btn" data-act="dl-quick" data-days="1" data-i18n="dl_quick_tomorrow">明日</button>
+        <button type="button" class="dl-quick-btn" data-act="dl-quick" data-days="3" data-i18n="dl_quick_3">3日後</button>
+        <button type="button" class="dl-quick-btn" data-act="dl-quick" data-days="7" data-i18n="dl_quick_7">1週間後</button>
+        <button type="button" class="dl-quick-btn" data-act="dl-quick" data-days="14" data-i18n="dl_quick_14">2週間後</button>
+      </div>
+      <button type="button" class="search-btn dl-add-btn" data-act="dl-add" data-i18n="dl_add_btn">＋ 追加</button>
+    </div>
+    <div id="dl-add-error" class="error-text"></div>
+  </div>
+
+  <div id="dl-summary" class="dl-summary" hidden></div>
+
+  <div class="dl-toolbar">
+    <button type="button" class="dl-clear-expired-btn" data-act="dl-clear-done" data-i18n="dl_clear_done">完了済みを削除</button>
+    <button type="button" class="dl-clear-expired-btn" data-act="dl-clear" data-i18n="dl_clear_expired">期限切れを削除</button>
+  </div>
+
+  <div id="dl-list" class="dl-list"></div>
+</div>
+
+<!-- ===== 設定 (どのタブが表示中でも開閉できるよう、タブコンテンツの外側に配置) ===== -->
+<div class="settings-modal-overlay" id="settings-modal-overlay" data-act="overlay">
+  <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="set-title-main">
+    <div class="set-grabber" aria-hidden="true"></div>
+    <div class="set-nav">
+      <button type="button" class="set-nav-btn set-back" id="set-back" data-act="settings-back" hidden>
+        <span class="material-icons">chevron_left</span><span data-i18n="settings_title">設定</span>
+      </button>
+      <span class="set-nav-spacer"></span>
+      <button type="button" class="set-nav-btn set-done" id="set-done" data-act="close-settings" data-i18n="settings_done">完了</button>
+    </div>
+
+    <div class="set-pages">
+      <!-- メイン -->
+      <section class="set-page set-page-main" id="set-page-main">
+        <h2 class="set-large-title" id="set-title-main" data-i18n="settings_title">設定</h2>
+
+        <div class="set-group">
+          <button type="button" class="set-row" data-act="settings-push" data-page="lang">
+            <span class="set-icon" style="--ic:#0a84ff"><span class="material-icons">language</span></span>
+            <span class="set-label" data-i18n="settings_lang_title">言語</span>
+            <span class="set-value" id="settings-lang-value">日本語</span>
+            <span class="material-icons set-chev">chevron_right</span>
+          </button>
+        </div>
+
+        <div class="set-group">
+          <button type="button" class="set-row" id="motion-switch" role="switch" aria-checked="false" data-act="toggle-motion">
+            <span class="set-icon" style="--ic:#ff9f0a"><span class="material-icons">animation</span></span>
+            <span class="set-label" data-i18n="settings_reduce_motion">アニメーションを減らす</span>
+            <span class="ios-switch" aria-hidden="true"><span class="ios-switch-knob"></span></span>
+          </button>
+        </div>
+        <p class="set-footnote" data-i18n="settings_reduce_motion_note">画面の切り替えやボタンの動きを抑えます。</p>
+      </section>
+
+      <!-- 言語 -->
+      <section class="set-page set-page-lang" id="set-page-lang" aria-hidden="true">
+        <h2 class="set-large-title" data-i18n="settings_lang_title">言語</h2>
+        <p class="set-footnote set-footnote-top" data-i18n="settings_lang_sub">表示する言語を選択してください。</p>
+        <div class="set-group">
+          <button type="button" class="set-row lang-option" id="lang-option-ja" data-act="set-lang" data-lang="ja">
+            <span class="set-label">日本語</span>
+            <span class="material-icons lang-option-check">check</span>
+          </button>
+          <button type="button" class="set-row lang-option" id="lang-option-en" data-act="set-lang" data-lang="en">
+            <span class="set-label">English</span>
+            <span class="material-icons lang-option-check">check</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- 元に戻す用のトースト -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="toast-msg" id="toast-msg"></span>
+  <button type="button" class="toast-btn" id="toast-btn" data-act="toast-action" hidden></button>
+</div>
+
+
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+<script src="js/bg.js"></script>
+</body>
+</html>
